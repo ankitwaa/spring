@@ -1,5 +1,6 @@
 package org.cdac.ankit;
 
+import org.cdac.ankit.springhibernate.dao.UserHinbernateDao;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -31,6 +32,8 @@ public class SpringExample{
 		String message=applicationContext.getMessage("welcome", null, "Missing", null);
 		System.out.println(" Message " + message);
 		
+		UserHinbernateDao dao=(UserHinbernateDao)applicationContext.getBean("userHinbernateDao",UserHinbernateDao.class);
+
 	}
 
 }
